@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Burned4You — Shop Website
 
-## Getting Started
+A Next.js website for a custom laser-engraving shop (ornaments, bookmarks,
+coasters, tealight holders, earrings, wooden games, and pet keepsakes).
 
-First, run the development server:
+## Running it
+
+Open a terminal in this folder and run:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000) in a browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## The available scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+These are run with `npm run <name>`, defined in `package.json`:
 
-## Learn More
+| Script  | What it does                                              |
+| ------- | ---------------------------------------------------------- |
+| `dev`   | Starts the site locally for editing, with live reload.     |
+| `build` | Builds the optimized, production-ready version of the site.|
+| `start` | Runs the already-built production version (run `build` first). |
+| `lint`  | Checks the code for mistakes and style issues.              |
 
-To learn more about Next.js, take a look at the following resources:
+There's also `scripts/dev.cmd` — a small Windows helper (see
+`scripts/README.txt`) used only when previewing the site; you won't need
+to run it yourself.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Where things live
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+src/
+  app/           Every page of the site (Home, Catalog, About, Contact, ...)
+  components/    Reusable pieces used across pages (Header, Footer, cards, ...)
+  data/          The product catalog — edit catalog.ts to change categories/products
+  config/        Shop details (name, email, phone, social links) — see site.ts
 
-## Deploy on Vercel
+public/
+  products/      The photos shown on the live site, organized by category
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+_ProductPictures/  Your full raw photo library, organized for reference
+                    (see its own README.txt) — not used by the site directly
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+To change what's on the site:
+- **Products or categories** → edit `src/data/catalog.ts`
+- **Shop name, email, phone, socials** → edit `src/config/site.ts`
+- **Photos** → add/replace files in `public/products/<category>/`
+- **Page text or layout** → edit the matching file under `src/app/`
