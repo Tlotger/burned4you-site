@@ -32,22 +32,24 @@ export function MobileNav() {
           </svg>
         )}
       </button>
-      {open && (
-        <div className="absolute inset-x-0 top-full border-b border-white/10 bg-ink px-6 pb-6 pt-2 shadow-xl">
-          <nav className="flex flex-col gap-1">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-3 text-base font-medium text-white/85 hover:bg-white/5 hover:text-white"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-      )}
+      <div
+        className={`absolute inset-x-0 top-full grid border-b border-white/10 bg-ink px-6 shadow-xl transition-all duration-300 ease-out ${
+          open ? "grid-rows-[1fr] pt-2 pb-6 opacity-100" : "grid-rows-[0fr] pt-0 pb-0 opacity-0"
+        }`}
+      >
+        <nav className="flex flex-col gap-1 overflow-hidden">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="rounded-lg px-3 py-3 text-base font-medium text-white/85 transition-colors hover:bg-white/5 hover:text-white"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
     </div>
   );
 }
