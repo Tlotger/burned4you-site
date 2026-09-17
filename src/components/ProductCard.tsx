@@ -15,7 +15,7 @@ export function ProductCard({
   return (
     <div
       className="drop-in flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-sm transition-shadow hover:shadow-lg"
-      style={{ "--drop-in-delay": `${Math.min(index, 8) * 70}ms` } as CSSProperties}
+      style={{ "--drop-in-delay": `${Math.min(index, 6) * 45}ms` } as CSSProperties}
     >
       <div className="relative h-56 w-full overflow-hidden bg-ink/5">
         <Image
@@ -24,6 +24,7 @@ export function ProductCard({
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover"
+          priority={index === 0}
         />
       </div>
       <div className="flex flex-1 flex-col p-6">

@@ -8,7 +8,7 @@ export function CategoryCard({ category, index = 0 }: { category: Category; inde
     <Link
       href={`/catalog/${category.slug}`}
       className="drop-in group flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
-      style={{ "--drop-in-delay": `${Math.min(index, 8) * 70}ms` } as CSSProperties}
+      style={{ "--drop-in-delay": `${Math.min(index, 6) * 45}ms` } as CSSProperties}
     >
       <div className="relative h-48 w-full overflow-hidden bg-ink/5">
         <Image
@@ -17,6 +17,7 @@ export function CategoryCard({ category, index = 0 }: { category: Category; inde
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
           className="object-cover transition-transform duration-300 group-hover:scale-105"
+          priority={index === 0}
         />
       </div>
       <div className="flex flex-1 flex-col p-7">

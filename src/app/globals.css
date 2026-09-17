@@ -44,7 +44,7 @@ body {
 }
 
 .page-transition {
-  animation: page-enter 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: page-enter 0.3s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 @keyframes drop-in {
@@ -60,7 +60,7 @@ body {
 
 .drop-in {
   opacity: 0;
-  animation: drop-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation: drop-in 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
   animation-delay: var(--drop-in-delay, 0ms);
 }
 
