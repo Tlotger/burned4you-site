@@ -20,8 +20,8 @@ export default function CatalogPage() {
           </p>
         </div>
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((category) => (
-            <CategoryCard key={category.slug} category={category} />
+          {categories.map((category, index) => (
+            <CategoryCard key={category.slug} category={category} index={index} />
           ))}
         </div>
       </Container>

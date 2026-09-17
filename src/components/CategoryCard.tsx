@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { Category } from "@/data/catalog";
 
-export function CategoryCard({ category }: { category: Category }) {
+export function CategoryCard({ category, index = 0 }: { category: Category; index?: number }) {
   return (
     <Link
       href={`/catalog/${category.slug}`}
-      className="group flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+      className="drop-in group flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+      style={{ "--drop-in-delay": `${Math.min(index, 8) * 70}ms` } as CSSProperties}
     >
       <div className="relative h-48 w-full overflow-hidden bg-ink/5">
         <Image

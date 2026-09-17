@@ -1,16 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { Product } from "@/data/catalog";
 
 export function ProductCard({
   product,
   categorySlug,
+  index = 0,
 }: {
   product: Product;
   categorySlug: string;
+  index?: number;
 }) {
   return (
-    <div className="flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-sm transition-shadow hover:shadow-lg">
+    <div
+      className="drop-in flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-sm transition-shadow hover:shadow-lg"
+      style={{ "--drop-in-delay": `${Math.min(index, 8) * 70}ms` } as CSSProperties}
+    >
       <div className="relative h-56 w-full overflow-hidden bg-ink/5">
         <Image
           src={product.image}
