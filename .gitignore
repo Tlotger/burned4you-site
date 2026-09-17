@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw product photo dump (curated copies live in public/products)
+/_ProductPictures

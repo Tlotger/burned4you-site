@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
@@ -38,9 +39,9 @@ export default async function CategoryPage({
         <Link href="/catalog" className="text-sm font-semibold text-ember-600 hover:underline">
           ← All categories
         </Link>
-        <div className="mt-4 flex items-start gap-4">
-          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-ember-500/10 text-3xl">
-            {category.icon}
+        <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-center">
+          <div className="relative h-48 w-full shrink-0 overflow-hidden rounded-3xl md:h-40 md:w-64">
+            <Image src={category.heroImage} alt={category.name} fill sizes="256px" className="object-cover" />
           </div>
           <div>
             <p className="text-xs font-semibold tracking-wider text-ember-600 uppercase">{category.tagline}</p>
@@ -51,12 +52,7 @@ export default async function CategoryPage({
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {category.products.map((product) => (
-            <ProductCard
-              key={product.slug}
-              product={product}
-              categorySlug={category.slug}
-              categoryIcon={category.icon}
-            />
+            <ProductCard key={product.slug} product={product} categorySlug={category.slug} />
           ))}
         </div>
       </Container>

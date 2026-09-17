@@ -51,7 +51,7 @@ export default function Home() {
               Explore our categories
             </h2>
             <p className="mt-4 text-charcoal/70">
-              From wooden signs to wedding keepsakes — every category is fully customizable.
+              From tree ornaments to wooden games — every design can be personalized.
             </p>
           </div>
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

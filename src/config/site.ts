@@ -4,7 +4,7 @@ export const siteConfig = {
   shortName: "Emberwood",
   tagline: "Custom laser engraving & personalized gifts",
   description:
-    "Emberwood Studio hand-finishes laser-engraved gifts, signage, and keepsakes — wood, acrylic, leather, and more, made to order.",
+    "Emberwood Studio laser-cuts and engraves ornaments, bookmarks, coasters, and keepsakes from wood — hand-finished and made to order.",
   email: "hello@emberwoodstudio.example",
   phone: "+30 690 000 0000",
   location: "Thessaloniki, Greece",

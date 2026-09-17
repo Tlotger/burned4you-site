@@ -19,7 +19,7 @@ const values = [
   },
   {
     title: "Real materials",
-    copy: "Solid wood, acrylic, glass, and stainless steel — no flimsy shortcuts.",
+    copy: "Solid wood and acrylic accents — no flimsy shortcuts.",
   },
 ];
 
@@ -34,7 +34,7 @@ export default function AboutPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-white/75">
             {siteConfig.name} started with a single laser cutter and a lot of curiosity. Today we
-            design and engrave custom gifts, signage, and keepsakes for people who want something
+            design and engrave ornaments, bookmarks, and keepsakes for people who want something
             that couldn&apos;t have come from a big-box store.
           </p>
         </Container>
