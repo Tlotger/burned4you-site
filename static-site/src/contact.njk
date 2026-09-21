@@ -1,0 +1,32 @@
+---
+layout: base.njk
+title: Contact
+permalink: /contact/
+scripts:
+  - /js/contact.js
+---
+<section class="py-5 my-3"><div class="container"><div class="row g-5">
+  <div class="col-lg-5">
+    <div class="eyebrow">Get in touch</div>
+    <h1 class="display-5 mt-2">Request a Quote</h1>
+    <p class="text-secondary">Tell us what you have in mind and we'll reply with pricing, materials, and a timeline.</p>
+    <dl class="mt-4 small">
+      <dt>Email</dt><dd class="text-secondary">{{ site.email }}</dd>
+      <dt>Phone</dt><dd class="text-secondary">{{ site.phone }}</dd>
+      <dt>Studio</dt><dd class="text-secondary">{{ site.location }}</dd>
+    </dl>
+  </div>
+  <div class="col-lg-7"><form class="form-card" action="{{ site.formEndpoint }}" method="POST">
+    <div class="row g-3">
+      <div class="col-sm-6"><label class="form-label fw-semibold" for="name">Name</label><input class="form-control" id="name" name="name" required></div>
+      <div class="col-sm-6"><label class="form-label fw-semibold" for="email">Email</label><input class="form-control" id="email" name="email" type="email" required></div>
+      <div class="col-sm-6"><label class="form-label fw-semibold" for="category">Category</label>
+        <select class="form-select" id="category" name="category"><option value="">General inquiry</option>
+          {% for c in categories %}<option value="{{ c.slug }}">{{ c.name }}</option>{% endfor %}
+        </select></div>
+      <div class="col-sm-6"><label class="form-label fw-semibold" for="item">Item (optional)</label><input class="form-control" id="item" name="item"></div>
+      <div class="col-12"><label class="form-label fw-semibold" for="message">Tell us about your idea</label><textarea class="form-control" id="message" name="message" rows="5" required placeholder="Sizes, colors, quantity, deadline — anything that helps us quote accurately."></textarea></div>
+      <div class="col-12"><button class="btn btn-ember rounded-pill px-4" type="submit">Send Message</button></div>
+    </div>
+  </form></div>
+</div></div></section>

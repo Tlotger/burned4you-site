@@ -1,0 +1,28 @@
+{% macro delay(i) %}{% if i < 6 %}{{ i * 45 }}{% else %}270{% endif %}{% endmacro %}
+
+{% macro categoryCard(cat, i) %}
+<a class="card-b4y drop-in" href="/catalog/{{ cat.slug }}/" style="--drop-in-delay: {{ delay(i) | trim }}ms">
+  <div class="card-img-wrap"><img src="{{ cat.heroImage }}" alt="{{ cat.name }}" {% if i == 0 %}fetchpriority="high"{% else %}loading="lazy"{% endif %}></div>
+  <div class="body">
+    <div class="eyebrow">{{ cat.tagline }}</div>
+    <h3>{{ cat.name }}</h3>
+    <p class="desc">{{ cat.description }}</p>
+    <span class="fw-semibold" style="color: var(--ember-600)">View {{ cat.products | length }} items →</span>
+  </div>
+</a>
+{% endmacro %}
+
+{% macro productCard(p, catSlug, i) %}
+<div class="card-b4y tall drop-in" style="--drop-in-delay: {{ delay(i) | trim }}ms">
+  <div class="card-img-wrap"><img src="{{ p.image }}" alt="{{ p.name }}" {% if i == 0 %}fetchpriority="high"{% else %}loading="lazy"{% endif %}></div>
+  <div class="body">
+    <h3>{{ p.name }}</h3>
+    <p class="desc">{{ p.description }}</p>
+    <p class="small fw-semibold mb-3" style="color: rgba(43,28,18,.6)">Material: <span class="fw-normal">{{ p.material }}</span></p>
+    <div class="d-flex justify-content-between align-items-center gap-2">
+      <span class="small fw-semibold" style="color: var(--ember-600)">Made to order</span>
+      <a class="btn btn-ember btn-sm rounded-pill px-3" href="/contact/?item={{ p.name | urlencode }}&category={{ catSlug }}">Ask About This</a>
+    </div>
+  </div>
+</div>
+{% endmacro %}

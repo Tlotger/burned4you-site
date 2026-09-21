@@ -1,0 +1,28 @@
+<footer class="bg-ink text-white-50 mt-auto">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="brand text-white mb-2">🔥 {{ site.name }}</div>
+        <p class="small">{{ site.description }}</p>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="footer-h">Pages</h6>
+        <ul class="list-unstyled small">
+          <li><a href="/">Home</a></li><li><a href="/catalog/">Catalog</a></li>
+          <li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md-3">
+        <h6 class="footer-h">Categories</h6>
+        <ul class="list-unstyled small">
+          {% for cat in categories %}{% if loop.index0 < 4 %}<li><a href="/catalog/{{ cat.slug }}/">{{ cat.name }}</a></li>{% endif %}{% endfor %}
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6 class="footer-h">Contact</h6>
+        <ul class="list-unstyled small"><li>{{ site.email }}</li><li>{{ site.phone }}</li><li>{{ site.location }}</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="border-top border-secondary-subtle text-center small py-3">© {{ year }} {{ site.name }}. All rights reserved.</div>
+</footer>

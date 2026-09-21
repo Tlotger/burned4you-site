@@ -1,0 +1,18 @@
+---
+layout: base.njk
+title: Catalog
+permalink: /catalog/
+---
+{% from "macros.njk" import categoryCard %}
+<section class="py-5 my-3">
+  <div class="container">
+    <div class="text-center mx-auto mb-5" style="max-width: 40rem">
+      <div class="eyebrow">Full catalog</div>
+      <h1 class="display-5 mt-2">Choose a category</h1>
+      <p class="text-secondary">Every item is made to order. Pick a category to see examples and materials.</p>
+    </div>
+    <div class="row g-4">
+      {% for cat in categories %}<div class="col-sm-6 col-lg-4">{{ categoryCard(cat, loop.index0) }}</div>{% endfor %}
+    </div>
+  </div>
+</section>
