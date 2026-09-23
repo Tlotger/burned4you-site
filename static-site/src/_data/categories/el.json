@@ -1,0 +1,247 @@
+[
+  {
+    "slug": "ornaments",
+    "name": "Χριστουγεννιάτικα Στολίδια",
+    "tagline": "Στολίδια δέντρου με στρώσεις λεπτομέρειας",
+    "description": "Ξύλινα στολίδια κομμένα με λέιζερ, από φίνα διάτρητα μενταγιόν μέχρι πολυεπίπεδες ζωγραφισμένες σκηνές.",
+    "heroImage": "/products/ornaments/nutcracker-hero.jpeg",
+    "products": [
+      {
+        "slug": "nutcracker-ornament",
+        "name": "Στολίδι Καρυοθραύστης",
+        "description": "Ένας λεπτομερής καρυοθραύστης, χαραγμένος με λέιζερ με λεπτές γραμμές και κρεμασμένος με κορδόνι.",
+        "material": "Χαραγμένο ξύλο σημύδας",
+        "image": "/products/ornaments/nutcracker-ornament.jpeg"
+      },
+      {
+        "slug": "deer-medallion-ornament",
+        "name": "Στολίδι Μενταγιόν με Ελάφι",
+        "description": "Μια περίτεχνη σιλουέτα ελαφιού κομμένη σε στρογγυλό ξύλινο μενταγιόν.",
+        "material": "Ξύλο κομμένο με λέιζερ",
+        "image": "/products/ornaments/deer-medallion-ornament.jpeg"
+      },
+      {
+        "slug": "layered-christmas-ornament",
+        "name": "Πολυεπίπεδο Στολίδι «Merry Christmas»",
+        "description": "Μια πολυεπίπεδη μπάλα με ζωγραφισμένη σκηνή ελαφιού και δάσους και κορδέλα για κρέμασμα.",
+        "material": "Πολυεπίπεδο ζωγραφισμένο ξύλο",
+        "image": "/products/ornaments/layered-christmas-ornament.png"
+      },
+      {
+        "slug": "leaping-reindeer-ornament",
+        "name": "Στολίδι Τάρανδος σε Άλμα",
+        "description": "Μια δίχρωμη σιλουέτα τάρανδου με χαραγμένο σχέδιο νιφάδων χιονιού.",
+        "material": "Πολυεπίπεδο ξύλο",
+        "image": "/products/ornaments/leaping-reindeer-ornament.jpeg"
+      },
+      {
+        "slug": "north-pole-signpost",
+        "name": "Στολίδι-Πινακίδα Βόρειου Πόλου",
+        "description": "Μια μικροσκοπική πινακίδα που δείχνει προς τον Βόρειο Πόλο, το Στάβλο των Ταράνδων και το Εργαστήρι του Άγιου Βασίλη.",
+        "material": "Χαραγμένο ξύλο",
+        "image": "/products/ornaments/north-pole-signpost.jpeg"
+      }
+    ]
+  },
+  {
+    "slug": "bookmarks",
+    "name": "Ξύλινοι Σελιδοδείκτες",
+    "tagline": "Για τον αναγνώστη που τα έχει όλα",
+    "description": "Χαραγμένοι ξύλινοι σελιδοδείκτες με κορδέλα: περίτεχνες σκηνές, εποχιακά σχέδια και σύντομα μηνύματα.",
+    "heroImage": "/products/bookmarks/deer-forest-bookmark.jpeg",
+    "products": [
+      {
+        "slug": "deer-forest-bookmark",
+        "name": "Σελιδοδείκτης Ελάφι στο Δάσος",
+        "description": "Ένας λεπτοκομμένος σελιδοδείκτης με ελάφι και δάσος, με κορδέλα.",
+        "material": "Ξύλο κομμένο με λέιζερ",
+        "image": "/products/bookmarks/deer-forest-bookmark.jpeg"
+      },
+      {
+        "slug": "be-merry-bright-bookmark",
+        "name": "Σελιδοδείκτης «Be Merry & Bright»",
+        "description": "Ένας ψηλός χαραγμένος σελιδοδείκτης με το μήνυμα «Be Merry & Bright With a Great Story» και νιφάδα χιονιού.",
+        "material": "Χαραγμένο ξύλο",
+        "image": "/products/bookmarks/be-merry-bright-bookmark.jpeg"
+      },
+      {
+        "slug": "merry-xmas-bookmark",
+        "name": "Σελιδοδείκτης «Merry Xmas» με Δώρο",
+        "description": "Ένας χαραγμένος σελιδοδείκτης με μπάλες, ένα τυλιγμένο δώρο και κορδέλα.",
+        "material": "Χαραγμένο ξύλο",
+        "image": "/products/bookmarks/merry-xmas-bookmark.jpeg"
+      },
+      {
+        "slug": "gnome-ornament-bookmark",
+        "name": "Σετ Σελιδοδεικτών Νάνος & Μπάλες",
+        "description": "Ζευγάρι χαραγμένων σελιδοδεικτών με σατέν κορδέλες: ένας χριστουγεννιάτικος νάνος και ένα σχέδιο με κρεμαστές μπάλες.",
+        "material": "Χαραγμένο ξύλο",
+        "image": "/products/bookmarks/gnome-ornament-bookmark.jpeg"
+      }
+    ]
+  },
+  {
+    "slug": "coasters",
+    "name": "Σουβέρ",
+    "tagline": "Στρογγυλά ξύλινα σουβέρ, χαραγμένα κατά παραγγελία",
+    "description": "Χαραγμένα ξύλινα σουβέρ, μεμονωμένα ή σε σετ που ταιριάζουν.",
+    "heroImage": "/products/coasters/winter-village-coasters.jpeg",
+    "products": [
+      {
+        "slug": "winter-village-coasters",
+        "name": "Σετ Σουβέρ Χειμωνιάτικο Χωριό",
+        "description": "Στρογγυλά σουβέρ χαραγμένα με χιονισμένες σκηνές χωριού και γέφυρας.",
+        "material": "Χαραγμένο ξύλο",
+        "image": "/products/coasters/winter-village-coasters.jpeg"
+      },
+      {
+        "slug": "fireside-coasters",
+        "name": "Σετ Σουβέρ Δίπλα στο Τζάκι",
+        "description": "Σουβέρ χαραγμένα με κεριά και μια χιονισμένη καλύβα.",
+        "material": "Χαραγμένο ξύλο",
+        "image": "/products/coasters/fireside-coasters.jpeg"
+      },
+      {
+        "slug": "let-it-snow-coaster",
+        "name": "Σουβέρ «Let It Snow»",
+        "description": "Ένα στρογγυλό σουβέρ χαραγμένο με χαριτωμένη γραφή «Let It Snow» και νιφάδες.",
+        "material": "Χαραγμένο ξύλο",
+        "image": "/products/coasters/let-it-snow-coaster.jpeg"
+      },
+      {
+        "slug": "merry-christmas-lights-coaster",
+        "name": "Σουβέρ «Merry Christmas» με Λαμπάκια",
+        "description": "Ένα σουβέρ χαραγμένο με μπερδεμένα λαμπάκια και ένα σκανδαλιάρικο ξωτικό.",
+        "material": "Χαραγμένο ξύλο",
+        "image": "/products/coasters/merry-christmas-lights-coaster.jpeg"
+      }
+    ]
+  },
+  {
+    "slug": "tealight-holders",
+    "name": "Κηροπήγια για Ρεσώ",
+    "tagline": "Ξύλινες σκηνές με βάση για κερί",
+    "description": "Σιλουέτες σκηνών κομμένες σε ξύλο, καθεμία με βάση για ρεσώ.",
+    "heroImage": "/products/tealights/deer-forest-tealight.jpeg",
+    "products": [
+      {
+        "slug": "deer-forest-tealight",
+        "name": "Κηροπήγιο Ελάφι & Δάσος",
+        "description": "Μια όρθια αψίδα με ελάφι ανάμεσα σε πεύκα, με βάση για ρεσώ.",
+        "material": "Ξύλο κομμένο με λέιζερ",
+        "image": "/products/tealights/deer-forest-tealight.jpeg"
+      },
+      {
+        "slug": "gingerbread-house-tealight",
+        "name": "Κηροπήγιο Μπισκοτόσπιτο",
+        "description": "Η σιλουέτα ενός μπισκοτόσπιτου με μπαστούνι καραμέλα, σε βάση για ρεσώ.",
+        "material": "Ξύλο κομμένο με λέιζερ",
+        "image": "/products/tealights/gingerbread-house-tealight.jpeg"
+      },
+      {
+        "slug": "snowflake-star-tealight",
+        "name": "Κηροπήγιο Αστέρι-Νιφάδα",
+        "description": "Μια γεωμετρική βάση αστεριού και νιφάδας για ρεσώ.",
+        "material": "Ξύλο κομμένο με λέιζερ",
+        "image": "/products/tealights/snowflake-star-tealight.jpeg"
+      },
+      {
+        "slug": "pine-trees-tealight",
+        "name": "Κηροπήγιο Πεύκα",
+        "description": "Τρία πεύκα κάτω από μια αστερόεσσα αψίδα, με βάση για ρεσώ.",
+        "material": "Ξύλο κομμένο με λέιζερ",
+        "image": "/products/tealights/pine-trees-tealight.jpeg"
+      }
+    ]
+  },
+  {
+    "slug": "earrings",
+    "name": "Ξύλινα Σκουλαρίκια",
+    "tagline": "Ελαφριά, κομμένα με λέιζερ, φινιρισμένα στο χέρι",
+    "description": "Κρεμαστά σκουλαρίκια κομμένα με λέιζερ από ξύλο, σε εποχιακά και καθημερινά σχέδια.",
+    "heroImage": "/products/earrings/witch-cat-earrings.jpeg",
+    "products": [
+      {
+        "slug": "witch-cat-earrings",
+        "name": "Σκουλαρίκια Γάτα Μάγισσα",
+        "description": "Μια μαύρη γάτα με καπέλο μάγισσας, κομμένη σε ξύλινο κρεμαστό σκουλαρίκι.",
+        "material": "Ξύλο κομμένο με λέιζερ",
+        "image": "/products/earrings/witch-cat-earrings.jpeg"
+      },
+      {
+        "slug": "ghost-earrings",
+        "name": "Σκουλαρίκια Φαντασματάκι",
+        "description": "Ένα φιλικό φαντασματάκι κινουμένων σχεδίων, κομμένο με λέιζερ και φινιρισμένο στο χέρι.",
+        "material": "Ξύλο κομμένο με λέιζερ",
+        "image": "/products/earrings/ghost-earrings.jpeg"
+      },
+      {
+        "slug": "heart-cat-earrings",
+        "name": "Σκουλαρίκια Καρδιά με Γάτα",
+        "description": "Ένα πρόσωπο γάτας χαραγμένο μέσα σε ξύλινη καρδιά.",
+        "material": "Ξύλο κομμένο με λέιζερ",
+        "image": "/products/earrings/heart-cat-earrings.jpeg"
+      },
+      {
+        "slug": "snowflake-heart-earrings",
+        "name": "Σκουλαρίκια Καρδιά με Νιφάδα",
+        "description": "Μια κόκκινη και λευκή καρδιά με νιφάδα χιονιού στο κέντρο.",
+        "material": "Βαμμένο ξύλο",
+        "image": "/products/earrings/snowflake-heart-earrings.jpeg"
+      }
+    ]
+  },
+  {
+    "slug": "wooden-games",
+    "name": "Ξύλινα Παιχνίδια Τρίλιζα",
+    "tagline": "Ένα χειροποίητο ταμπλό στο θέμα που αγαπάτε",
+    "description": "Ταμπλό τρίλιζας κομμένα με λέιζερ, με θεματικά πιόνια και βαμμένο φόντο.",
+    "heroImage": "/products/games/camping-tic-tac-toe.jpeg",
+    "products": [
+      {
+        "slug": "camping-tic-tac-toe",
+        "name": "Τρίλιζα Κάμπινγκ",
+        "description": "Ένα πράσινο ταμπλό με πιόνια φωτιά κατασκήνωσης και σκηνή.",
+        "material": "Βαμμένο κόντρα πλακέ",
+        "image": "/products/games/camping-tic-tac-toe.jpeg"
+      },
+      {
+        "slug": "pets-tic-tac-toe",
+        "name": "Τρίλιζα Γάτες & Σκύλοι",
+        "description": "Ένα μαύρο ταμπλό με χαραγμένα πιόνια γάτας και σκύλου.",
+        "material": "Βαμμένο κόντρα πλακέ",
+        "image": "/products/games/pets-tic-tac-toe.jpeg"
+      },
+      {
+        "slug": "spring-tic-tac-toe",
+        "name": "Τρίλιζα Λαγουδάκι & Κοτοπουλάκι",
+        "description": "Ένα ταμπλό σε χρώμα καρυδιάς με ανοιξιάτικα πιόνια λαγουδάκι και κοτοπουλάκι.",
+        "material": "Βαμμένο κόντρα πλακέ",
+        "image": "/products/games/spring-tic-tac-toe.jpeg"
+      },
+      {
+        "slug": "summer-tic-tac-toe",
+        "name": "Τρίλιζα Καλοκαιρινά Φρούτα",
+        "description": "Ένα ροζ ταμπλό με πιόνια καρπούζι και ανανά.",
+        "material": "Βαμμένο κόντρα πλακέ",
+        "image": "/products/games/summer-tic-tac-toe.jpeg"
+      }
+    ]
+  },
+  {
+    "slug": "pet-keepsakes",
+    "name": "Αναμνηστικά για Κατοικίδια",
+    "tagline": "Για τα τετράποδα μέλη της οικογένειας",
+    "description": "Εξατομικευμένα στολίδια και ταυτότητες με το όνομα του κατοικιδίου σας.",
+    "heroImage": "/products/pets/personalized-pet-ornament.jpeg",
+    "products": [
+      {
+        "slug": "personalized-pet-ornament",
+        "name": "Εξατομικευμένο Στολίδι με Όνομα Κατοικιδίου",
+        "description": "Ένα στολίδι με πατούσες σε κορνίζα και το όνομα του κατοικιδίου σας σε ταυτότητα σχήματος κόκαλου. Εδώ φτιαγμένο για τη «Freya».",
+        "material": "Ξύλο και ακρυλικό",
+        "image": "/products/pets/personalized-pet-ornament.jpeg"
+      }
+    ]
+  }
+]

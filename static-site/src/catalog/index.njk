@@ -1,18 +1,25 @@
 ---
 layout: base.njk
-title: Catalog
-permalink: /catalog/
+pagination:
+  data: locales
+  size: 1
+  alias: lang
+permalink: "{{ lang.prefix }}/catalog/"
+pagePath: /catalog/
+eleventyComputed:
+  title: "{{ ui[lang.code].nav.catalog }}"
 ---
 {% from "macros.njk" import categoryCard %}
+{% set t = ui[lang.code] %}
 <section class="py-5 my-3">
   <div class="container">
     <div class="text-center mx-auto mb-5" style="max-width: 40rem">
-      <div class="eyebrow">Full catalog</div>
-      <h1 class="display-5 mt-2">Choose a category</h1>
-      <p class="text-secondary">Every item is made to order. Pick a category to see examples and materials.</p>
+      <div class="eyebrow">{{ t.catalog.eyebrow }}</div>
+      <h1 class="display-5 mt-2">{{ t.catalog.title }}</h1>
+      <p class="text-secondary">{{ t.catalog.text }}</p>
     </div>
     <div class="row g-4">
-      {% for cat in categories %}<div class="col-sm-6 col-lg-4">{{ categoryCard(cat, loop.index0) }}</div>{% endfor %}
+      {% for cat in categories[lang.code] %}<div class="col-sm-6 col-lg-4">{{ categoryCard(cat, loop.index0, t, lang.prefix) }}</div>{% endfor %}
     </div>
   </div>
 </section>

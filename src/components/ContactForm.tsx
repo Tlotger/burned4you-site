@@ -2,11 +2,15 @@
 
 import { useSearchParams } from "next/navigation";
 import { useState, FormEvent } from "react";
-import { categories } from "@/data/catalog";
+import { getCategories } from "@/data/catalog";
+import { getDictionary } from "@/i18n/dictionaries";
+import type { Locale } from "@/i18n/config";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
-export function ContactForm() {
+export function ContactForm({ lang }: { lang: Locale }) {
+  const dict = getDictionary(lang);
+  const categories = getCategories(lang);
   const searchParams = useSearchParams();
   const prefillItem = searchParams.get("item") ?? "";
   const prefillCategory = searchParams.get("category") ?? "";
@@ -26,34 +30,29 @@ export function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        body: JSON.stringify({ ...data, language: lang }),
       });
 
-      if (!res.ok) {
-        const body = await res.json().catch(() => ({}));
-        throw new Error(body.error ?? "Something went wrong. Please try again.");
-      }
+      if (!res.ok) throw new Error();
 
       setStatus("success");
       form.reset();
-    } catch (err) {
+    } catch {
       setStatus("error");
-      setErrorMessage(err instanceof Error ? err.message : "Something went wrong.");
+      setErrorMessage(dict.contact.genericError);
     }
   }
 
   if (status === "success") {
     return (
       <div className="rounded-3xl border border-ember-500/30 bg-ember-500/10 p-8 text-center">
-        <h3 className="font-display text-xl font-bold text-charcoal">Thanks — message sent!</h3>
-        <p className="mt-2 text-charcoal/70">
-          We usually reply within a day. We&apos;ll follow up at the email you provided.
-        </p>
+        <h3 className="font-display text-xl font-bold text-charcoal">{dict.contact.successTitle}</h3>
+        <p className="mt-2 text-charcoal/70">{dict.contact.successText}</p>
         <button
           onClick={() => setStatus("idle")}
           className="mt-6 rounded-full border-2 border-ink/15 px-5 py-2.5 text-sm font-semibold hover:border-ember-500"
         >
-          Send another message
+          {dict.contact.sendAnother}
         </button>
       </div>
     );
@@ -62,14 +61,14 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="grid gap-5">
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field label="Name" name="name" required />
-        <Field label="Email" name="email" type="email" required />
+        <Field label={dict.contact.name} name="name" required />
+        <Field label={dict.contact.email} name="email" type="email" required />
       </div>
 
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label className="mb-1.5 block text-sm font-semibold text-charcoal" htmlFor="category">
-            Category
+            {dict.contact.category}
           </label>
           <select
             id="category"
@@ -77,7 +76,7 @@ export function ContactForm() {
             defaultValue={prefillCategory}
             className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm focus:border-ember-500 focus:outline-none"
           >
-            <option value="">General inquiry</option>
+            <option value="">{dict.contact.general}</option>
             {categories.map((category) => (
               <option key={category.slug} value={category.slug}>
                 {category.name}
@@ -85,12 +84,12 @@ export function ContactForm() {
             ))}
           </select>
         </div>
-        <Field label="Item (optional)" name="item" defaultValue={prefillItem} />
+        <Field label={dict.contact.item} name="item" defaultValue={prefillItem} />
       </div>
 
       <div>
         <label className="mb-1.5 block text-sm font-semibold text-charcoal" htmlFor="message">
-          Tell us about your idea
+          {dict.contact.message}
         </label>
         <textarea
           id="message"
@@ -98,7 +97,7 @@ export function ContactForm() {
           required
           rows={5}
           className="w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm focus:border-ember-500 focus:outline-none"
-          placeholder="Sizes, colors, quantity, deadline — anything that helps us quote accurately."
+          placeholder={dict.contact.placeholder}
         />
       </div>
 
@@ -111,7 +110,7 @@ export function ContactForm() {
         disabled={status === "submitting"}
         className="inline-flex w-fit items-center gap-2 rounded-full bg-ember-500 px-6 py-3 font-semibold text-white transition-colors hover:bg-ember-600 disabled:opacity-60"
       >
-        {status === "submitting" ? "Sending…" : "Send Message"}
+        {status === "submitting" ? dict.contact.sending : dict.contact.send}
       </button>
     </form>
   );

@@ -1,20 +1,25 @@
 import Link from "next/link";
 import { Container } from "./Container";
 import { MobileNav } from "./MobileNav";
+import { LanguageSwitch } from "./LanguageSwitch";
 import { siteConfig } from "@/config/site";
+import { getDictionary } from "@/i18n/dictionaries";
+import { prefixFor, type Locale } from "@/i18n/config";
 
-const links = [
-  { href: "/", label: "Home" },
-  { href: "/catalog", label: "Catalog" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
+export function Header({ lang }: { lang: Locale }) {
+  const dict = getDictionary(lang);
+  const prefix = prefixFor(lang);
+  const links = [
+    { href: `${prefix}/`, label: dict.nav.home },
+    { href: `${prefix}/catalog`, label: dict.nav.catalog },
+    { href: `${prefix}/about`, label: dict.nav.about },
+    { href: `${prefix}/contact`, label: dict.nav.contact },
+  ];
 
-export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-ink/95 backdrop-blur">
       <Container className="relative flex h-18 items-center justify-between py-3">
-        <Link href="/" className="flex items-center gap-2 font-display text-xl font-bold text-white">
+        <Link href={`${prefix}/`} className="flex items-center gap-2 font-display text-xl font-bold text-white">
           <span className="text-2xl">🔥</span>
           {siteConfig.shortName}
         </Link>
@@ -29,14 +34,20 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
+          <LanguageSwitch
+            lang={lang}
+            label={dict.switchLabel}
+            title={dict.switchTitle}
+            className="hidden md:inline-flex"
+          />
           <Link
-            href="/contact"
+            href={`${prefix}/contact`}
             className="hidden rounded-full bg-ember-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-ember-600 sm:inline-flex"
           >
-            Get a Quote
+            {dict.nav.cta}
           </Link>
-          <MobileNav />
+          <MobileNav lang={lang} />
         </div>
       </Container>
     </header>

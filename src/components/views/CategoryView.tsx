@@ -1,43 +1,20 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { Container } from "@/components/Container";
 import { ProductCard } from "@/components/ProductCard";
-import { categories, getCategory } from "@/data/catalog";
+import type { Category } from "@/data/catalog";
+import { getDictionary } from "@/i18n/dictionaries";
+import { prefixFor, type Locale } from "@/i18n/config";
 
-export function generateStaticParams() {
-  return categories.map((category) => ({ slug: category.slug }));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  const category = getCategory(slug);
-  if (!category) return {};
-  return {
-    title: category.name,
-    description: category.description,
-  };
-}
-
-export default async function CategoryPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const category = getCategory(slug);
-  if (!category) notFound();
+export function CategoryView({ lang, category }: { lang: Locale; category: Category }) {
+  const dict = getDictionary(lang);
+  const prefix = prefixFor(lang);
 
   return (
     <section className="py-20">
       <Container>
-        <Link href="/catalog" className="text-sm font-semibold text-ember-600 hover:underline">
-          ← All categories
+        <Link href={`${prefix}/catalog`} className="text-sm font-semibold text-ember-600 hover:underline">
+          {dict.catalog.back}
         </Link>
         <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-center">
           <div className="relative h-48 w-full shrink-0 overflow-hidden rounded-3xl md:h-40 md:w-64">
@@ -52,7 +29,13 @@ export default async function CategoryPage({
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {category.products.map((product, index) => (
-            <ProductCard key={product.slug} product={product} categorySlug={category.slug} index={index} />
+            <ProductCard
+              key={product.slug}
+              product={product}
+              categorySlug={category.slug}
+              lang={lang}
+              index={index}
+            />
           ))}
         </div>
       </Container>

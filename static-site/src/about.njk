@@ -1,21 +1,28 @@
 ---
 layout: base.njk
-title: About
-permalink: /about/
+pagination:
+  data: locales
+  size: 1
+  alias: lang
+permalink: "{{ lang.prefix }}/about/"
+pagePath: /about/
+eleventyComputed:
+  title: "{{ ui[lang.code].nav.about }}"
 ---
+{% set t = ui[lang.code] %}
 <section class="bg-ink text-white py-5">
   <div class="container py-4">
-    <div class="eyebrow eyebrow-light">Our story</div>
-    <h1 class="display-5 mt-2" style="max-width: 40rem">A small studio, obsessed with the details</h1>
-    <p class="text-white-50 mt-3" style="max-width: 40rem">{{ site.name }} started with a single laser cutter and a lot of curiosity. Today we design and engrave ornaments, bookmarks, and keepsakes for people who want something that couldn't have come from a big-box store.</p>
+    <div class="eyebrow eyebrow-light">{{ t.about.eyebrow }}</div>
+    <h1 class="display-5 mt-2" style="max-width: 40rem">{{ t.about.title }}</h1>
+    <p class="text-white-50 mt-3" style="max-width: 40rem">{{ t.about.text }}</p>
   </div>
 </section>
 <section class="py-5"><div class="container"><div class="row g-4">
-  <div class="col-md-4"><div class="card-b4y"><div class="body"><h3>Made to order</h3><p class="desc mb-0">Nothing sits on a shelf. Every piece is cut and engraved after you place your order.</p></div></div></div>
-  <div class="col-md-4"><div class="card-b4y"><div class="body"><h3>Hand-finished</h3><p class="desc mb-0">Every edge is sanded, sealed, and checked by hand before it ships.</p></div></div></div>
-  <div class="col-md-4"><div class="card-b4y"><div class="body"><h3>Real materials</h3><p class="desc mb-0">Solid wood and acrylic accents — no flimsy shortcuts.</p></div></div></div>
+  {% for v in t.about.values %}
+  <div class="col-md-4"><div class="card-b4y"><div class="body"><h3>{{ v.title }}</h3><p class="desc mb-0">{{ v.text }}</p></div></div></div>
+  {% endfor %}
 </div></div></section>
 <section class="bg-cream-soft py-5"><div class="container text-center">
-  <h2 class="mb-4">Ready to bring your idea to life?</h2>
-  <a class="btn btn-ember btn-lg rounded-pill px-4" href="/contact/">Lets craft it together →</a>
+  <h2 class="mb-4">{{ t.about.ctaTitle }}</h2>
+  <a class="btn btn-ember btn-lg rounded-pill px-4" href="{{ lang.prefix }}/contact/">{{ t.about.ctaButton }}</a>
 </div></section>

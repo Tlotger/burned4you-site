@@ -3,26 +3,26 @@
     <div class="row g-4">
       <div class="col-md-4">
         <div class="brand text-white mb-2">🔥 {{ site.name }}</div>
-        <p class="small">{{ site.description }}</p>
+        <p class="small">{{ t.description }}</p>
       </div>
       <div class="col-6 col-md-2">
-        <h6 class="footer-h">Pages</h6>
+        <h6 class="footer-h">{{ t.footer.pages }}</h6>
         <ul class="list-unstyled small">
-          <li><a href="/">Home</a></li><li><a href="/catalog/">Catalog</a></li>
-          <li><a href="/about/">About</a></li><li><a href="/contact/">Contact</a></li>
+          <li><a href="{{ L.prefix }}/">{{ t.nav.home }}</a></li><li><a href="{{ L.prefix }}/catalog/">{{ t.nav.catalog }}</a></li>
+          <li><a href="{{ L.prefix }}/about/">{{ t.nav.about }}</a></li><li><a href="{{ L.prefix }}/contact/">{{ t.nav.contact }}</a></li>
         </ul>
       </div>
       <div class="col-6 col-md-3">
-        <h6 class="footer-h">Categories</h6>
+        <h6 class="footer-h">{{ t.footer.categories }}</h6>
         <ul class="list-unstyled small">
-          {% for cat in categories %}{% if loop.index0 < 4 %}<li><a href="/catalog/{{ cat.slug }}/">{{ cat.name }}</a></li>{% endif %}{% endfor %}
+          {% for cat in categories[L.code] %}{% if loop.index0 < 4 %}<li><a href="{{ L.prefix }}/catalog/{{ cat.slug }}/">{{ cat.name }}</a></li>{% endif %}{% endfor %}
         </ul>
       </div>
       <div class="col-md-3">
-        <h6 class="footer-h">Contact</h6>
-        <ul class="list-unstyled small"><li>{{ site.email }}</li><li>{{ site.phone }}</li><li>{{ site.location }}</li></ul>
+        <h6 class="footer-h">{{ t.footer.contact }}</h6>
+        <ul class="list-unstyled small"><li>{{ site.email }}</li><li>{{ site.phone }}</li><li>{{ t.location }}</li></ul>
       </div>
     </div>
   </div>
-  <div class="border-top border-secondary-subtle text-center small py-3">© {{ year }} {{ site.name }}. All rights reserved.</div>
+  <div class="border-top border-secondary-subtle text-center small py-3">© {{ year }} {{ site.name }}. {{ t.footer.rights }}</div>
 </footer>

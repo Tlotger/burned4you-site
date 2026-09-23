@@ -2,16 +2,23 @@ import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { Product } from "@/data/catalog";
+import { getDictionary } from "@/i18n/dictionaries";
+import { prefixFor, type Locale } from "@/i18n/config";
 
 export function ProductCard({
   product,
   categorySlug,
+  lang,
   index = 0,
 }: {
   product: Product;
   categorySlug: string;
+  lang: Locale;
   index?: number;
 }) {
+  const dict = getDictionary(lang);
+  const prefix = prefixFor(lang);
+
   return (
     <div
       className="drop-in flex flex-col overflow-hidden rounded-3xl border border-ink/10 bg-paper shadow-sm transition-shadow hover:shadow-lg"
@@ -31,15 +38,15 @@ export function ProductCard({
         <h3 className="font-display text-lg font-bold text-charcoal">{product.name}</h3>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-charcoal/70">{product.description}</p>
         <p className="mt-4 text-xs font-semibold text-charcoal/60">
-          Material: <span className="font-normal">{product.material}</span>
+          {dict.catalog.material} <span className="font-normal">{product.material}</span>
         </p>
         <div className="mt-5 flex items-center justify-between gap-3">
-          <span className="text-sm font-semibold text-ember-600">Made to order</span>
+          <span className="text-sm font-semibold text-ember-600">{dict.catalog.madeToOrder}</span>
           <Link
-            href={`/contact?item=${encodeURIComponent(product.name)}&category=${categorySlug}`}
+            href={`${prefix}/contact?item=${encodeURIComponent(product.name)}&category=${categorySlug}`}
             className="rounded-full bg-ember-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-ember-600"
           >
-            Ask About This
+            {dict.catalog.ask}
           </Link>
         </div>
       </div>

@@ -1,27 +1,11 @@
-export type Product = {
-  slug: string;
-  name: string;
-  description: string;
-  material: string;
-  image: string;
-};
-
-export type Category = {
-  slug: string;
-  name: string;
-  tagline: string;
-  description: string;
-  heroImage: string;
-  products: Product[];
-};
+import type { Category } from "./types";
 
 export const categories: Category[] = [
   {
     slug: "ornaments",
     name: "Christmas Ornaments",
     tagline: "Tree decorations with layers of detail",
-    description:
-      "Laser-cut wooden ornaments — from fine filigree medallions to multi-layer painted scenes.",
+    description: "Laser-cut wooden ornaments, from fine filigree medallions to multi-layer painted scenes.",
     heroImage: "/products/ornaments/nutcracker-hero.jpeg",
     products: [
       {
@@ -65,8 +49,7 @@ export const categories: Category[] = [
     slug: "bookmarks",
     name: "Wooden Bookmarks",
     tagline: "For the reader who has everything",
-    description:
-      "Engraved wooden bookmarks with ribbon ties — intricate scenes, seasonal designs, and short messages.",
+    description: "Engraved wooden bookmarks with ribbon ties: intricate scenes, seasonal designs, and short messages.",
     heroImage: "/products/bookmarks/deer-forest-bookmark.jpeg",
     products: [
       {
@@ -93,7 +76,7 @@ export const categories: Category[] = [
       {
         slug: "gnome-ornament-bookmark",
         name: "Gnome & Ornament Bookmark Set",
-        description: "A pair of engraved bookmarks — a Christmas gnome and a hanging-ornament design — with satin ribbons.",
+        description: "A pair of engraved bookmarks with satin ribbons: a Christmas gnome and a hanging-ornament design.",
         material: "Engraved wood",
         image: "/products/bookmarks/gnome-ornament-bookmark.jpeg",
       },
@@ -257,21 +240,10 @@ export const categories: Category[] = [
       {
         slug: "personalized-pet-ornament",
         name: "Personalized Pet Name Ornament",
-        description:
-          "A paw-print-framed ornament with your pet's name on a bone-shaped tag — shown here made for \"Freya\".",
+        description: "A paw-print-framed ornament with your pet's name on a bone-shaped tag. Shown here made for \"Freya\".",
         material: "Wood and acrylic",
         image: "/products/pets/personalized-pet-ornament.jpeg",
       },
     ],
   },
 ];
-
-export function getCategory(slug: string) {
-  return categories.find((category) => category.slug === slug);
-}
-
-export function getAllProducts() {
-  return categories.flatMap((category) =>
-    category.products.map((product) => ({ ...product, categorySlug: category.slug, categoryName: category.name }))
-  );
-}

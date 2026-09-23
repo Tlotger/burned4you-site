@@ -2,16 +2,20 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { LanguageSwitch } from "./LanguageSwitch";
+import { getDictionary } from "@/i18n/dictionaries";
+import { prefixFor, type Locale } from "@/i18n/config";
 
-const links = [
-  { href: "/", label: "Home" },
-  { href: "/catalog", label: "Catalog" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
-
-export function MobileNav() {
+export function MobileNav({ lang }: { lang: Locale }) {
   const [open, setOpen] = useState(false);
+  const dict = getDictionary(lang);
+  const prefix = prefixFor(lang);
+  const links = [
+    { href: `${prefix}/`, label: dict.nav.home },
+    { href: `${prefix}/catalog`, label: dict.nav.catalog },
+    { href: `${prefix}/about`, label: dict.nav.about },
+    { href: `${prefix}/contact`, label: dict.nav.contact },
+  ];
 
   return (
     <div className="md:hidden">
@@ -48,6 +52,16 @@ export function MobileNav() {
               {link.label}
             </Link>
           ))}
+          <div className="mt-2 flex items-center gap-3 border-t border-white/10 pt-3">
+            <LanguageSwitch lang={lang} label={dict.switchLabel} title={dict.switchTitle} />
+            <Link
+              href={`${prefix}/contact`}
+              onClick={() => setOpen(false)}
+              className="rounded-full bg-ember-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-ember-600"
+            >
+              {dict.nav.cta}
+            </Link>
+          </div>
         </nav>
       </div>
     </div>

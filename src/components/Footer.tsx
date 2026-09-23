@@ -1,9 +1,15 @@
 import Link from "next/link";
 import { Container } from "./Container";
-import { categories } from "@/data/catalog";
+import { getCategories } from "@/data/catalog";
 import { siteConfig } from "@/config/site";
+import { getDictionary } from "@/i18n/dictionaries";
+import { prefixFor, type Locale } from "@/i18n/config";
 
-export function Footer() {
+export function Footer({ lang }: { lang: Locale }) {
+  const dict = getDictionary(lang);
+  const prefix = prefixFor(lang);
+  const categories = getCategories(lang);
+
   return (
     <footer className="border-t border-white/10 bg-ink text-white/70">
       <Container className="grid gap-10 py-14 md:grid-cols-4">
@@ -12,27 +18,25 @@ export function Footer() {
             <span className="text-xl">🔥</span>
             {siteConfig.name}
           </div>
-          <p className="mt-3 max-w-xs text-sm leading-relaxed">
-            {siteConfig.description}
-          </p>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed">{dict.description}</p>
         </div>
 
         <div>
-          <h3 className="text-xs font-semibold tracking-wider text-ember-400 uppercase">Pages</h3>
+          <h3 className="text-xs font-semibold tracking-wider text-ember-400 uppercase">{dict.footer.pages}</h3>
           <ul className="mt-4 space-y-2 text-sm">
-            <li><Link className="hover:text-white" href="/">Home</Link></li>
-            <li><Link className="hover:text-white" href="/catalog">Catalog</Link></li>
-            <li><Link className="hover:text-white" href="/about">About</Link></li>
-            <li><Link className="hover:text-white" href="/contact">Contact</Link></li>
+            <li><Link className="hover:text-white" href={`${prefix}/`}>{dict.nav.home}</Link></li>
+            <li><Link className="hover:text-white" href={`${prefix}/catalog`}>{dict.nav.catalog}</Link></li>
+            <li><Link className="hover:text-white" href={`${prefix}/about`}>{dict.nav.about}</Link></li>
+            <li><Link className="hover:text-white" href={`${prefix}/contact`}>{dict.nav.contact}</Link></li>
           </ul>
         </div>
 
         <div>
-          <h3 className="text-xs font-semibold tracking-wider text-ember-400 uppercase">Categories</h3>
+          <h3 className="text-xs font-semibold tracking-wider text-ember-400 uppercase">{dict.footer.categories}</h3>
           <ul className="mt-4 space-y-2 text-sm">
             {categories.slice(0, 4).map((category) => (
               <li key={category.slug}>
-                <Link className="hover:text-white" href={`/catalog/${category.slug}`}>
+                <Link className="hover:text-white" href={`${prefix}/catalog/${category.slug}`}>
                   {category.name}
                 </Link>
               </li>
@@ -41,16 +45,16 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="text-xs font-semibold tracking-wider text-ember-400 uppercase">Contact</h3>
+          <h3 className="text-xs font-semibold tracking-wider text-ember-400 uppercase">{dict.footer.contact}</h3>
           <ul className="mt-4 space-y-2 text-sm">
             <li>{siteConfig.email}</li>
             <li>{siteConfig.phone}</li>
-            <li>{siteConfig.location}</li>
+            <li>{dict.location}</li>
           </ul>
         </div>
       </Container>
       <div className="border-t border-white/10 py-6 text-center text-xs text-white/50">
-        © {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
+        © {new Date().getFullYear()} {siteConfig.name}. {dict.footer.rights}
       </div>
     </footer>
   );

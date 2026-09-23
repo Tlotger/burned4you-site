@@ -1,18 +1,21 @@
 ---
 layout: base.njk
 pagination:
-  data: categories
+  data: categoryPages
   size: 1
-  alias: category
-permalink: "/catalog/{{ category.slug }}/"
+  alias: entry
+permalink: "{{ entry.lang.prefix }}/catalog/{{ entry.category.slug }}/"
 eleventyComputed:
-  title: "{{ category.name }}"
-  description: "{{ category.description }}"
+  pagePath: "/catalog/{{ entry.category.slug }}/"
+  title: "{{ entry.category.name }}"
+  description: "{{ entry.category.description }}"
 ---
 {% from "macros.njk" import productCard %}
+{% set t = ui[entry.lang.code] %}
+{% set category = entry.category %}
 <section class="py-5 my-3">
   <div class="container">
-    <a class="fw-semibold small text-decoration-none" href="/catalog/">← All categories</a>
+    <a class="fw-semibold small text-decoration-none" href="{{ entry.lang.prefix }}/catalog/">{{ t.catalog.back }}</a>
     <div class="d-flex flex-column flex-md-row align-items-md-center gap-4 mt-3">
       <img src="{{ category.heroImage }}" alt="{{ category.name }}" fetchpriority="high" class="rounded-4 flex-shrink-0" style="width: 16rem; max-width: 100%; height: 10rem; object-fit: cover">
       <div>
@@ -22,7 +25,7 @@ eleventyComputed:
       </div>
     </div>
     <div class="row g-4 mt-4">
-      {% for p in category.products %}<div class="col-sm-6 col-lg-4">{{ productCard(p, category.slug, loop.index0) }}</div>{% endfor %}
+      {% for p in category.products %}<div class="col-sm-6 col-lg-4">{{ productCard(p, category.slug, loop.index0, t, entry.lang.prefix) }}</div>{% endfor %}
     </div>
   </div>
 </section>

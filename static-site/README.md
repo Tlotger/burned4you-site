@@ -1,6 +1,7 @@
 # Burned4You — static version (Eleventy + Bootstrap)
 
 Plain HTML + Bootstrap, with shared pieces written once. No TypeScript.
+Two languages: **Greek is the default** (`/`), **English is at `/en/`**.
 
 ## Run it
 
@@ -9,21 +10,48 @@ Plain HTML + Bootstrap, with shared pieces written once. No TypeScript.
     npm run build      (creates the finished site in the _site/ folder)
 
 Upload the contents of `_site/` to any web host (Netlify, GitHub Pages, ...).
+If `npm start` ever shows odd errors after you add or rename data files, stop
+it (Ctrl+C) and start it again.
 
 ## Where to edit things
 
-    src/_data/site.json         Shop name, email, phone, stats, contact form address
-    src/_data/categories.json   Every category and product (name, text, photo path)
-    src/products/               The product photos
-    src/css/style.css           Colors, cards, animations
-    src/_includes/header.njk    Top menu        (footer.njk = bottom of every page)
-    src/_includes/macros.njk    The category card and product card layouts
-    src/*.njk, src/catalog/     The pages themselves (plain HTML with {{ }} placeholders)
+    src/_data/ui/el.json           All Greek wording (menu, buttons, headings, form labels)
+    src/_data/ui/en.json           The same wording in English
+    src/_data/categories/el.json   Greek categories + products
+    src/_data/categories/en.json   English categories + products
+    src/_data/site.json            Shop name, email, phone, contact form address (shared)
+    src/_data/locales.json         The list of languages and their URL prefixes
+    src/products/                  The product photos
+    src/css/style.css              Colors, cards, animations
+    src/_includes/                 header.njk, footer.njk, macros.njk (card layouts), base.njk
+    src/*.njk, src/catalog/        The pages (HTML with {{ }} placeholders)
+
+## Changing text
+Edit the matching key in BOTH `ui/el.json` and `ui/en.json`. Keep the two files
+in the same shape (same keys) — the Greek file is a translation of the English one.
+The brand name "Burned4You" is written literally inside a few sentences; if you
+rename the shop, search for it.
 
 ## To add a product
-Add a photo to `src/products/<category>/`, then add an entry to the matching
-category in `src/_data/categories.json`. The card and page appear automatically.
+1. Add the photo to `src/products/<category>/`.
+2. Add the product to the matching category in BOTH `categories/el.json` and
+   `categories/en.json`. Keep the same `slug`, `image`, and order in both; only
+   `name`, `description`, and `material` differ by language.
+
+## To add a whole new category
+Same as above, but add it to both category files (same position in both lists).
+Its page is created automatically in both languages.
+
+## Adding a third language later
+Add an entry to `locales.json`, create `ui/<code>.json` and `categories/<code>.json`,
+and add the new code to the `categories` object in `src/_data/categoryPages.js`.
 
 ## Contact form
 It posts to Formspree. Create a free form at formspree.io and put its address
 in `src/_data/site.json` (`formEndpoint`) — until then the form won't deliver.
+Each message includes a hidden `language` field (el/en).
+
+## Not done yet
+- `hreflang` tags (they tell Google which page is the Greek/English twin). They
+  need the final website address, so add them once the domain is known.
+- The Greek text is a draft; please have a native speaker review it.

@@ -22,7 +22,7 @@
   --color-ember-400: var(--color-ember-400);
   --color-ember-500: var(--color-ember-500);
   --color-ember-600: var(--color-ember-600);
-  --font-display: var(--font-baloo);
+  --font-display: var(--font-comfortaa);
   --font-sans: var(--font-inter);
 }
 
@@ -70,4 +70,19 @@ body {
     animation: none;
     opacity: 1;
   }
+}
+
+.lang-switch {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.lang-switch:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
 }

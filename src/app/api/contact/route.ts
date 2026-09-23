@@ -6,6 +6,7 @@ type ContactPayload = {
   category?: string;
   item?: string;
   message?: string;
+  language?: string;
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
