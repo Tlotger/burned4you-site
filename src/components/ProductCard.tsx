@@ -4,6 +4,7 @@ import type { CSSProperties } from "react";
 import { Product } from "@/data/catalog";
 import { getDictionary } from "@/i18n/dictionaries";
 import { prefixFor, type Locale } from "@/i18n/config";
+import { formatPrice } from "@/lib/currency";
 
 export function ProductCard({
   product,
@@ -40,8 +41,13 @@ export function ProductCard({
         <p className="mt-4 text-xs font-semibold text-charcoal/60">
           {dict.catalog.material} <span className="font-normal">{product.material}</span>
         </p>
+        {product.personalizable && (
+          <p className="mt-1 text-xs font-semibold text-ember-600">{dict.catalog.personalizable}</p>
+        )}
         <div className="mt-5 flex items-center justify-between gap-3">
-          <span className="text-sm font-semibold text-ember-600">{dict.catalog.madeToOrder}</span>
+          <span className="text-sm font-semibold text-ember-600">
+            {product.price != null ? formatPrice(product.price, lang) : dict.catalog.madeToOrder}
+          </span>
           <Link
             href={`${prefix}/contact?item=${encodeURIComponent(product.name)}&category=${categorySlug}`}
             className="rounded-full bg-ember-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-ember-600"

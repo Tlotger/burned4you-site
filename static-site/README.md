@@ -1,4 +1,16 @@
-# Burned4You — static version (Eleventy + Bootstrap)
+# Burned4You — static version (Eleventy + Bootstrap) — ARCHIVED
+
+**This site is frozen and no longer maintained.** The Next.js/TS site in the
+project root was chosen as the one site going forward for the e-shop build,
+so it wouldn't make sense to keep duplicating every change (catalog, prices,
+wording, cart) across two codebases. Keep this folder for reference if you
+want to compare designs, but don't add real prices or new products here —
+they won't reach customers.
+
+Everything below describes how this site used to work, back when it was
+kept in sync with the Next.js version.
+
+---
 
 Plain HTML + Bootstrap, with shared pieces written once. No TypeScript.
 Two languages: **Greek is the default** (`/`), **English is at `/en/`**.

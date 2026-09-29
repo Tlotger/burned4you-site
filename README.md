@@ -58,13 +58,25 @@ src/
     dictionaries/   All page wording — el.ts (Greek) and en.ts (English)
 
   data/
-    catalog/        The product catalog — en.ts and el.ts (categories +
-                    products), kept in sync by hand: same slugs, images,
-                    and order in both files, only the text differs
+    catalog/
+      shared.ts     Facts that never change by language: each product's
+                    slug, photo, price (in EUR — unset until real pricing
+                    is decided), and whether it can be personalized
+      en.ts, el.ts  Translated text only (name, description, tagline,
+                    material), looked up by slug — no slugs/photos/prices
+                    live here, so they can't drift between languages
+      index.ts      Merges shared.ts + en.ts/el.ts into what the pages
+                    actually render, and throws immediately (breaking the
+                    build) if a slug in shared.ts has no matching text in
+                    a language, or vice versa
+
+  lib/
+    currency.ts     Formats a price for display in the right language
+                    ("€24.00" in English, "24,00 €" in Greek)
 
   config/
     site.ts         Shop details that don't change by language (name,
-                    email, phone)
+                    email, phone, currency)
 
 public/
   products/         The photos shown on the live site, organized by category
@@ -78,28 +90,41 @@ _ProductPictures/  Your full raw photo library, organized for reference
 - **Wording** (buttons, headings, labels) → edit the matching key in BOTH
   `src/i18n/dictionaries/el.ts` and `en.ts`. Keep the two files the same
   shape — the Greek file is a translation of the English one.
-- **Products or categories** → edit BOTH `src/data/catalog/el.ts` and
-  `en.ts`. Keep the same `slug`, `image`, and order in both; only the
-  Greek/English text differs.
-- **Adding a whole new category or product** → add it to both catalog
-  files, in the same position in each list. Its page is created
-  automatically in both languages.
-- **Shop name, email, phone** → edit `src/config/site.ts` (shared, not
-  per-language).
-- **Photos** → add/replace files in `public/products/<category>/`.
+- **A product's price, photo, or whether it's personalizable** → edit
+  `src/data/catalog/shared.ts` only, in one place — it's the same in both
+  languages. Set `price: 24` (a plain number, EUR) and it appears on the
+  site automatically, formatted for whichever language the visitor is on.
+- **A product's name, description, or material text** → edit BOTH
+  `src/data/catalog/el.ts` and `en.ts`, under that product's slug.
+- **Adding a whole new category or product** → add its facts (slug,
+  photo, price) to `shared.ts`, and its text to BOTH `el.ts` and `en.ts`
+  under the same slug. If you add it to one and forget the other, the
+  site will fail to build with a clear error naming the missing slug,
+  rather than silently showing broken text.
+- **Shop name, email, phone, currency** → edit `src/config/site.ts`
+  (shared, not per-language).
+- **Photos** → add the file to `public/products/<category>/`, then point
+  to it from `shared.ts`.
 - **Page layout** (not wording) → edit the matching file under
   `src/components/views/`.
 
 ## Adding a third language later
 
 Add the language to `src/i18n/config.ts`, create
-`src/i18n/dictionaries/<code>.ts` and `src/data/catalog/<code>.ts`, add the
-code to the `byLocale` object in `src/data/catalog/index.ts` and to
-`dictionaries` in `src/i18n/dictionaries/index.ts`, then copy the `en/`
-route folder to a new folder named after the language code.
+`src/i18n/dictionaries/<code>.ts` and `src/data/catalog/<code>.ts` (text
+only, matching the shape of `en.ts`), add the code to `textByLocale` in
+`src/data/catalog/index.ts` and to `dictionaries` in
+`src/i18n/dictionaries/index.ts`, then copy the `en/` route folder to a
+new folder named after the language code. `shared.ts` doesn't change —
+prices and photos are already language-independent.
 
 ## Not done yet
 
+- **Prices.** Every product's `price` in `src/data/catalog/shared.ts` is
+  currently unset, so the site shows "Made to order" instead of a price.
+  Fill them in when real pricing is decided.
 - The Greek text is a draft; please have a native speaker review it.
 - No `hreflang` tags yet (they tell Google which page is the Greek/English
   twin) — they need the final website address to be added correctly.
+- No cart/checkout yet — this is catalog-only. See the e-shop migration
+  plan for what comes next.

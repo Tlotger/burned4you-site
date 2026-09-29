@@ -42,6 +42,7 @@ const el: typeof en = {
     viewMany: "Δείτε {n} προϊόντα →",
     material: "Υλικό:",
     madeToOrder: "Κατά παραγγελία",
+    personalizable: "Μπορεί να εξατομικευτεί",
     ask: "Ρωτήστε μας",
   },
   about: {

@@ -40,6 +40,7 @@ const en = {
     viewMany: "View {n} items →",
     material: "Material:",
     madeToOrder: "Made to order",
+    personalizable: "Can be personalized",
     ask: "Ask About This",
   },
   about: {
