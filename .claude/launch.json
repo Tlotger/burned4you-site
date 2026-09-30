@@ -6,12 +6,6 @@
       "runtimeExecutable": "D:\\Desktop\\__\\Site\\scripts\\dev.cmd",
       "runtimeArgs": [],
       "port": 3000
-    },
-    {
-      "name": "static-dev",
-      "runtimeExecutable": "D:\\Desktop\\__\\Site\\static-site\\dev.cmd",
-      "runtimeArgs": [],
-      "port": 8080
     }
   ]
 }
