@@ -2,6 +2,13 @@ const en = {
   nav: { home: "Home", catalog: "Catalog", about: "About", contact: "Contact", cta: "Craft Yours" },
   switchLabel: "ΕΛ",
   switchTitle: "Ελληνικά",
+  a11y: {
+    skip: "Skip to content",
+    openMenu: "Open menu",
+    closeMenu: "Close menu",
+    mainNav: "Main",
+    mobileNav: "Mobile",
+  },
   description:
     "Burned4You laser-cuts and engraves ornaments, bookmarks, coasters, and keepsakes from wood, hand-finished and made to order.",
   location: "Athens, Greece",
@@ -74,8 +81,36 @@ const en = {
     successText: "We usually reply within a day. We'll follow up at the email you provided.",
     sendAnother: "Send another message",
     genericError: "Something went wrong. Please try again.",
+    requiredNote: "Fields marked with * are required.",
   },
-  footer: { pages: "Pages", categories: "Categories", contact: "Contact", rights: "All rights reserved." },
+  status: {
+    notFoundTitle: "Page not found",
+    notFoundText: "The page you are looking for doesn't exist or has moved.",
+    errorTitle: "Something went wrong",
+    errorText: "We couldn't load this page. Please try again.",
+    retry: "Try again",
+    home: "Back to the homepage",
+  },
+  accessibility: {
+    title: "Accessibility",
+    intro:
+      "Burned4You aims to make this website usable by everyone, including people with disabilities. We work towards conformance with the Web Content Accessibility Guidelines (WCAG) 2.1, level AA.",
+    sections: [
+      {
+        title: "What we have done",
+        text: "The site can be used with a keyboard alone, offers a “skip to content” link, shows a visible focus indicator, has sufficient colour contrast, supports screen readers with labelled navigation and forms, and respects the reduced-motion setting of your device. Both Greek and English versions declare their language correctly.",
+      },
+      {
+        title: "Known limitations",
+        text: "We are still reviewing some product images, whose descriptions may be brief, and we have not yet had the site independently audited. This statement will be updated as we improve.",
+      },
+      {
+        title: "Feedback and contact",
+        text: "If you meet a barrier on this site, or need information in another format, please tell us and we will do our best to help.",
+      },
+    ],
+  },
+  footer: { accessibility: "Accessibility", pages: "Pages", categories: "Categories", contact: "Contact", rights: "All rights reserved." },
 };
 
 export default en;

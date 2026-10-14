@@ -22,7 +22,14 @@ export function LanguageSwitch({
   const other = otherLocale(lang);
 
   return (
-    <Link href={target} lang={other} hrefLang={other} title={title} className={`lang-switch ${className}`}>
+    <Link
+      href={target}
+      lang={other}
+      hrefLang={other}
+      aria-label={title}
+      title={title}
+      className={`lang-switch min-h-11 items-center ${className}`}
+    >
       {label}
     </Link>
   );

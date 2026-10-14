@@ -1,14 +1,12 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { SetHtmlLang } from "@/components/SetHtmlLang";
+import type { Metadata } from "next";
+import "../globals.css";
+import { RootShell } from "@/components/RootShell";
+import { siteConfig } from "@/config/site";
+
+export const metadata: Metadata = {
+  title: { default: siteConfig.name, template: `%s | ${siteConfig.name}` },
+};
 
 export default function ElLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <>
-      <SetHtmlLang lang="el" />
-      <Header lang="el" />
-      <main className="flex-1">{children}</main>
-      <Footer lang="el" />
-    </>
-  );
+  return <RootShell lang="el">{children}</RootShell>;
 }

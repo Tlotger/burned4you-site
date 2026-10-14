@@ -36,13 +36,13 @@ export function ProductCard({
         />
       </div>
       <div className="flex flex-1 flex-col p-6">
-        <h3 className="font-display text-lg font-bold text-charcoal">{product.name}</h3>
+        <h2 className="font-display text-lg font-bold text-charcoal">{product.name}</h2>
         <p className="mt-2 flex-1 text-sm leading-relaxed text-charcoal/70">{product.description}</p>
-        <p className="mt-4 text-xs font-semibold text-charcoal/60">
+        <p className="mt-4 text-sm font-semibold text-charcoal/75">
           {dict.catalog.material} <span className="font-normal">{product.material}</span>
         </p>
         {product.personalizable && (
-          <p className="mt-1 text-xs font-semibold text-ember-600">{dict.catalog.personalizable}</p>
+          <p className="mt-1 text-sm font-semibold text-ember-600">{dict.catalog.personalizable}</p>
         )}
         <div className="mt-5 flex items-center justify-between gap-3">
           <span className="text-sm font-semibold text-ember-600">
@@ -50,7 +50,8 @@ export function ProductCard({
           </span>
           <Link
             href={`${prefix}/contact?item=${encodeURIComponent(product.name)}&category=${categorySlug}`}
-            className="rounded-full bg-ember-500 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-ember-600"
+            aria-label={`${dict.catalog.ask}: ${product.name}`}
+            className="inline-flex min-h-11 items-center rounded-full bg-ember-600 px-5 py-2 text-sm font-semibold text-white transition-colors hover:bg-ember-700"
           >
             {dict.catalog.ask}
           </Link>

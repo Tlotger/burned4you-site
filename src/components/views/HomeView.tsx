@@ -17,7 +17,7 @@ export function HomeView({ lang }: { lang: Locale }) {
         <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-ember-500/20 blur-3xl" />
         <div className="pointer-events-none absolute -left-16 bottom-0 h-64 w-64 rounded-full bg-ember-400/10 blur-3xl" />
         <Container className="relative py-24 md:py-32">
-          <p className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold tracking-wider text-ember-400 uppercase">
+          <p className="inline-block rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-semibold tracking-wide text-ember-400 uppercase">
             {dict.home.pill}
           </p>
           <h1 className="mt-6 max-w-2xl font-display text-4xl font-bold leading-tight md:text-6xl">
@@ -40,7 +40,7 @@ export function HomeView({ lang }: { lang: Locale }) {
             {dict.stats.map((stat) => (
               <div key={stat.label}>
                 <div className="font-display text-3xl font-bold text-ember-500">{stat.value}</div>
-                <div className="text-sm text-white/60">{stat.label}</div>
+                <div className="text-sm text-white/70">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -51,7 +51,7 @@ export function HomeView({ lang }: { lang: Locale }) {
       <section className="bg-cream py-24">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-semibold tracking-wider text-ember-600 uppercase">{dict.home.catsEyebrow}</p>
+            <p className="text-sm font-semibold tracking-wide text-ember-600 uppercase">{dict.home.catsEyebrow}</p>
             <h2 className="mt-3 font-display text-3xl font-bold text-charcoal md:text-4xl">
               {dict.home.catsTitle}
             </h2>
@@ -69,7 +69,7 @@ export function HomeView({ lang }: { lang: Locale }) {
       <section className="bg-ink-soft py-24 text-white">
         <Container>
           <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs font-semibold tracking-wider text-ember-400 uppercase">{dict.home.processEyebrow}</p>
+            <p className="text-sm font-semibold tracking-wide text-ember-400 uppercase">{dict.home.processEyebrow}</p>
             <h2 className="mt-3 font-display text-3xl font-bold md:text-4xl">{dict.home.processTitle}</h2>
           </div>
           <div className="mt-14 grid gap-8 md:grid-cols-3">
@@ -86,10 +86,10 @@ export function HomeView({ lang }: { lang: Locale }) {
 
       {/* CTA */}
       <section className="bg-cream py-24">
-        <Container className="flex flex-col items-center gap-6 rounded-3xl bg-ember-500 px-8 py-16 text-center text-white">
+        <Container className="flex flex-col items-center gap-6 rounded-3xl bg-ember-600 px-8 py-16 text-center text-white">
           <h2 className="font-display text-3xl font-bold md:text-4xl">{dict.home.ctaTitle}</h2>
-          <p className="max-w-xl text-white/90">{dict.home.ctaText}</p>
-          <Button href={`${prefix}/contact`} variant="outline" className="border-white text-white hover:bg-white/15">
+          <p className="max-w-xl text-white">{dict.home.ctaText}</p>
+          <Button href={`${prefix}/contact`} variant="outline" className="border-white text-white hover:bg-white/20">
             {dict.home.ctaButton}
           </Button>
         </Container>

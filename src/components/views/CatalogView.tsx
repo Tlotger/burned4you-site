@@ -12,7 +12,7 @@ export function CatalogView({ lang }: { lang: Locale }) {
     <section className="py-20">
       <Container>
         <div className="mx-auto max-w-2xl text-center">
-          <p className="text-xs font-semibold tracking-wider text-ember-600 uppercase">{dict.catalog.eyebrow}</p>
+          <p className="text-sm font-semibold tracking-wide text-ember-600 uppercase">{dict.catalog.eyebrow}</p>
           <h1 className="mt-3 font-display text-4xl font-bold text-charcoal">{dict.catalog.title}</h1>
           <p className="mt-4 text-charcoal/70">{dict.catalog.text}</p>
         </div>

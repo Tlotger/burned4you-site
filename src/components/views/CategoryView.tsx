@@ -13,15 +13,15 @@ export function CategoryView({ lang, category }: { lang: Locale; category: Categ
   return (
     <section className="py-20">
       <Container>
-        <Link href={`${prefix}/catalog`} className="text-sm font-semibold text-ember-600 hover:underline">
+        <Link href={`${prefix}/catalog`} className="inline-block py-2 text-sm font-semibold text-ember-600 hover:underline">
           {dict.catalog.back}
         </Link>
         <div className="mt-4 flex flex-col gap-6 md:flex-row md:items-center">
           <div className="relative h-48 w-full shrink-0 overflow-hidden rounded-3xl md:h-40 md:w-64">
-            <Image src={category.heroImage} alt={category.name} fill sizes="256px" className="object-cover" priority />
+            <Image src={category.heroImage} alt="" fill sizes="256px" className="object-cover" priority />
           </div>
           <div>
-            <p className="text-xs font-semibold tracking-wider text-ember-600 uppercase">{category.tagline}</p>
+            <p className="text-sm font-semibold tracking-wide text-ember-600 uppercase">{category.tagline}</p>
             <h1 className="mt-1 font-display text-3xl font-bold text-charcoal md:text-4xl">{category.name}</h1>
             <p className="mt-2 max-w-2xl text-charcoal/70">{category.description}</p>
           </div>

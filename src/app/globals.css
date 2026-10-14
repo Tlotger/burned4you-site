@@ -9,7 +9,8 @@
   --color-charcoal: #2b1c12;
   --color-ember-400: #f6903d;
   --color-ember-500: #f2670c;
-  --color-ember-600: #d1550a;
+  --color-ember-600: #b04407;
+  --color-ember-700: #8f3606;
 }
 
 @theme inline {
@@ -22,8 +23,44 @@
   --color-ember-400: var(--color-ember-400);
   --color-ember-500: var(--color-ember-500);
   --color-ember-600: var(--color-ember-600);
+  --color-ember-700: var(--color-ember-700);
   --font-display: var(--font-comfortaa);
   --font-sans: var(--font-inter);
+}
+
+html {
+  /* Keep focused/anchored content clear of the sticky header. */
+  scroll-padding-top: 6rem;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-ember-600);
+  outline-offset: 3px;
+}
+
+/* On the dark header/footer use the light orange. */
+header :focus-visible,
+footer :focus-visible {
+  outline-color: var(--color-ember-400);
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 0.5rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  border-radius: 999px;
+  background: var(--color-ink);
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 3px solid var(--color-ember-400);
+  outline-offset: 2px;
 }
 
 body {
@@ -70,13 +107,21 @@ body {
     animation: none;
     opacity: 1;
   }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
 }
 
 .lang-switch {
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.55);
   border-radius: 999px;
-  padding: 0.3rem 0.8rem;
-  font-size: 0.8rem;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.85);
