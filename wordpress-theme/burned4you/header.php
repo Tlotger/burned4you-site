@@ -19,7 +19,7 @@ defined( 'ABSPATH' ) || exit;
 	<header class="site-header">
 		<div class="container site-header__inner">
 			<a href="<?php echo esc_url( function_exists( 'pll_home_url' ) ? pll_home_url() : home_url( '/' ) ); ?>" class="site-logo">
-				<span class="site-logo__mark">🔥</span>
+				<span class="site-logo__mark"> </span>
 				<?php bloginfo( 'name' ); ?>
 			</a>
 
