@@ -15,7 +15,7 @@ defined( 'ABSPATH' ) || exit;
 					<?php bloginfo( 'name' ); ?>
 				</div>
 				<p style="margin-top:0.75rem;max-width:20rem;font-size:0.875rem;line-height:1.6;">
-					<?php echo esc_html( b4y_str( 'description', "Burned4You laser-cuts and engraves ornaments, bookmarks, coasters, and keepsakes from wood, hand-finished and made to order." ) ); ?>
+					<?php echo esc_html( b4y_str( 'description', "We laser-cut and engrave ornaments, bookmarks, coasters, and keepsakes from wood, hand-finished and made to order." ) ); ?>
 				</p>
 			</div>
 

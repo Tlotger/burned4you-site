@@ -17,10 +17,10 @@ $translations = array(
 	'Catalog' => 'Κατάλογος',
 	'About' => 'Σχετικά',
 	'Contact' => 'Επικοινωνία',
-	'Craft Yours' => 'Φτιάξε το δικό σου',
+	'Craft Yours' => 'Φτιάξτε το δικό σας',
 
-	"Burned4You laser-cuts and engraves ornaments, bookmarks, coasters, and keepsakes from wood, hand-finished and made to order." =>
-		'Το Burned4You κόβει και χαράζει με λέιζερ στολίδια, σελιδοδείκτες, σουβέρ και αναμνηστικά από ξύλο, φινιρισμένα στο χέρι και φτιαγμένα κατά παραγγελία.',
+	"We laser-cut and engrave ornaments, bookmarks, coasters, and keepsakes from wood, hand-finished and made to order." =>
+		'Κόβουμε και χαράζουμε με λέιζερ στολίδια, σελιδοδείκτες, σουβέρ και αναμνηστικά από ξύλο, φινιρισμένα στο χέρι και φτιαγμένα κατά παραγγελία.',
 	'Athens, Greece' => 'Αθήνα, Ελλάδα',
 
 	'Custom laser engraving studio' => 'Εργαστήριο χάραξης με λέιζερ',
@@ -44,8 +44,8 @@ $translations = array(
 	'Pick a category and send us your idea, photo, or design through our form.' =>
 		'Διαλέξτε κατηγορία και στείλτε μας την ιδέα, μια φωτογραφία ή ένα σχέδιο μέσω της φόρμας μας.',
 	'We craft a proof' => 'Ετοιμάζουμε την πρόταση',
-	'We confirm material, size, and price, then get your piece ready to engrave.' =>
-		'Επιβεβαιώνουμε υλικό, μέγεθος και τιμή και ετοιμάζουμε το κομμάτι σας για χάραξη.',
+	'We confirm material and size, then get your piece ready to engrave.' =>
+		'Επιβεβαιώνουμε υλικό και μέγεθος, και ετοιμάζουμε το κομμάτι σας για χάραξη.',
 	'Delivered to your door' => 'Στην πόρτα σας',
 	'Your finished, hand-checked piece ships out or is ready for local pickup.' =>
 		'Το έτοιμο, ελεγμένο στο χέρι κομμάτι αποστέλλεται ή είναι έτοιμο για παραλαβή.',

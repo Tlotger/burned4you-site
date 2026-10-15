@@ -23,7 +23,7 @@ function b4y_register_strings() {
 		'nav.cta'     => 'Craft Yours',
 
 		// Site-wide
-		'description' => "Burned4You laser-cuts and engraves ornaments, bookmarks, coasters, and keepsakes from wood, hand-finished and made to order.",
+		'description' => "We laser-cut and engrave ornaments, bookmarks, coasters, and keepsakes from wood, hand-finished and made to order.",
 		'location'    => 'Athens, Greece',
 
 		// Home
@@ -47,7 +47,7 @@ function b4y_register_strings() {
 		'home.step1_title'     => 'Tell us your idea',
 		'home.step1_text'      => 'Pick a category and send us your idea, photo, or design through our form.',
 		'home.step2_title'     => 'We craft a proof',
-		'home.step2_text'      => 'We confirm material, size, and price, then get your piece ready to engrave.',
+		'home.step2_text'      => 'We confirm material and size, then get your piece ready to engrave.',
 		'home.step3_title'     => 'Delivered to your door',
 		'home.step3_text'      => 'Your finished, hand-checked piece ships out or is ready for local pickup.',
 		'home.cta_title'       => 'Have something in mind?',

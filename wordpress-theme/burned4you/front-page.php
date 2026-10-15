@@ -27,7 +27,7 @@ if ( is_wp_error( $categories ) ) {
 			<em> <?php echo esc_html( b4y_str( 'home.h1_em', 'engraved keepsakes' ) ); ?></em>
 		</h1>
 		<p class="hero__lead">
-			<?php echo esc_html( b4y_str( 'description', "Burned4You laser-cuts and engraves ornaments, bookmarks, coasters, and keepsakes from wood, hand-finished and made to order." ) ); ?>
+			<?php echo esc_html( b4y_str( 'description', "We laser-cut and engrave ornaments, bookmarks, coasters, and keepsakes from wood, hand-finished and made to order." ) ); ?>
 			<?php echo esc_html( b4y_str( 'home.lead2', 'Every piece is cut, engraved, and finished by hand. Made to order, just for you.' ) ); ?>
 		</p>
 		<div class="hero__actions">
@@ -85,7 +85,7 @@ if ( is_wp_error( $categories ) ) {
 			<div class="step-card">
 				<span class="step-n">02</span>
 				<h3><?php echo esc_html( b4y_str( 'home.step2_title', 'We craft a proof' ) ); ?></h3>
-				<p><?php echo esc_html( b4y_str( 'home.step2_text', 'We confirm material, size, and price, then get your piece ready to engrave.' ) ); ?></p>
+				<p><?php echo esc_html( b4y_str( 'home.step2_text', 'We confirm material and size, then get your piece ready to engrave.' ) ); ?></p>
 			</div>
 			<div class="step-card">
 				<span class="step-n">03</span>
