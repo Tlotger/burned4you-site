@@ -487,15 +487,15 @@ a.card:hover, .card.category-card:hover { box-shadow: 0 15px 30px -10px rgba(0,0
 .card__body .meta { margin-top: 1rem; font-size: 0.75rem; font-weight: 600; color: rgba(43, 28, 18, 0.6); }
 .card__body .meta .value { font-weight: 400; }
 .card__body .personalizable { margin-top: 0.25rem; font-size: 0.75rem; font-weight: 600; color: var(--color-ember-600); }
+.card__note { margin-top: 0.75rem; font-size: 0.8125rem; font-style: italic; line-height: 1.5; color: rgba(43, 28, 18, 0.6); }
 
 .card__footer {
   margin-top: 1.25rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 0.75rem;
 }
-.card__price { font-size: 0.875rem; font-weight: 600; color: var(--color-ember-600); }
 .card__ask {
   border-radius: 999px;
   background: var(--color-ember-500);

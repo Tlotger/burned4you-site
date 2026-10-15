@@ -15,7 +15,6 @@ $image_url      = wp_get_attachment_image_url( $product->get_image_id(), 'medium
 if ( ! $image_url ) {
 	$image_url = wc_placeholder_img_src( 'medium_large' );
 }
-$price = $product->get_price();
 
 $ask_url = add_query_arg(
 	array(
@@ -38,10 +37,8 @@ $ask_url = add_query_arg(
 		<?php if ( $personalizable ) : ?>
 			<p class="personalizable"><?php echo esc_html( b4y_str( 'catalog.personalizable', 'Can be personalized' ) ); ?></p>
 		<?php endif; ?>
+		<p class="card__note"><?php echo esc_html( b4y_str( 'contact.text', "Tell us what you have in mind and we'll reply with pricing, materials, and a timeline." ) ); ?></p>
 		<div class="card__footer">
-			<span class="card__price">
-				<?php echo '' !== $price ? wp_kses_post( wc_price( $price ) ) : esc_html( b4y_str( 'catalog.made_to_order', 'Made to order' ) ); ?>
-			</span>
 			<a href="<?php echo esc_url( $ask_url ); ?>" class="card__ask"><?php echo esc_html( b4y_str( 'catalog.ask', 'Ask About This' ) ); ?></a>
 		</div>
 	</div>
