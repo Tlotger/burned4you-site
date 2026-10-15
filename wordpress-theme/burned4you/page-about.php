@@ -10,7 +10,7 @@ get_header();
 	<div class="container">
 		<p class="eyebrow"><?php echo esc_html( b4y_str( 'about.eyebrow', 'Our story' ) ); ?></p>
 		<h1><?php echo esc_html( b4y_str( 'about.title', 'A small studio, obsessed with the details' ) ); ?></h1>
-		<p><?php echo esc_html( b4y_str( 'about.text', "Burned4You started with a single laser cutter and a lot of curiosity. Today we design and engrave ornaments, bookmarks, and keepsakes for people who want something that couldn't have come from a big-box store." ) ); ?></p>
+		<p><?php echo esc_html( b4y_str( 'about.text', "We started with a single laser cutter and a lot of curiosity. Today we design and engrave ornaments, bookmarks, and keepsakes for people who want something that couldn't have come from a big-box store." ) ); ?></p>
 	</div>
 </section>
 

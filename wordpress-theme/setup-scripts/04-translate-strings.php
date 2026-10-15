@@ -68,8 +68,8 @@ $translations = array(
 
 	'Our story' => 'Η ιστορία μας',
 	'A small studio, obsessed with the details' => 'Ένα μικρό εργαστήριο, με εμμονή στη λεπτομέρεια',
-	"Burned4You started with a single laser cutter and a lot of curiosity. Today we design and engrave ornaments, bookmarks, and keepsakes for people who want something that couldn't have come from a big-box store." =>
-		'Το Burned4You ξεκίνησε με ένα λέιζερ και πολλή περιέργεια. Σήμερα σχεδιάζουμε και χαράζουμε στολίδια, σελιδοδείκτες και αναμνηστικά για όσους θέλουν κάτι που δεν θα έβρισκαν σε μια μεγάλη αλυσίδα.',
+	"We started with a single laser cutter and a lot of curiosity. Today we design and engrave ornaments, bookmarks, and keepsakes for people who want something that couldn't have come from a big-box store." =>
+		'Ξεκινήσαμε με ένα λέιζερ και πολλή περιέργεια. Σήμερα σχεδιάζουμε και χαράζουμε στολίδια, σελιδοδείκτες και αναμνηστικά για όσους θέλουν κάτι που δεν θα έβρισκαν σε μια μεγάλη αλυσίδα.',
 	'Nothing sits on a shelf. Every piece is cut and engraved after you place your order.' =>
 		'Τίποτα δεν περιμένει σε ράφι. Κάθε κομμάτι κόβεται και χαράζεται αφού κάνετε την παραγγελία σας.',
 	'Hand-finished' => 'Φινιρισμένο στο χέρι',
