@@ -70,6 +70,7 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 
 require get_template_directory() . '/inc/contact-handler.php';
 require get_template_directory() . '/inc/personalization.php';
+require get_template_directory() . '/inc/product-fields.php';
 require get_template_directory() . '/inc/template-helpers.php';
 require get_template_directory() . '/inc/woocommerce-setup.php';
 require get_template_directory() . '/inc/routes.php';
