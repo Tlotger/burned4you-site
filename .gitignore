@@ -9,3 +9,6 @@
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# local Claude Code tool config, not relevant to the site itself
+/.claude
