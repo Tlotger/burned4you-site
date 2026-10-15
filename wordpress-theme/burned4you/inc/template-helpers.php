@@ -82,7 +82,7 @@ function b4y_register_strings() {
 		// Contact
 		'contact.eyebrow'      => 'Get in touch',
 		'contact.title'        => "Lets craft together",
-		'contact.text'         => "Tell us what you have in mind and we'll reply with pricing, materials, and a timeline.",
+		'contact.text'         => "Tell us what you have in mind and we'll reply with materials and a timeline.",
 		'contact.email'        => 'Email',
 		'contact.phone'        => 'Phone',
 		'contact.studio'       => 'Studio',

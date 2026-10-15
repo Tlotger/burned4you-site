@@ -82,8 +82,8 @@ $translations = array(
 
 	'Get in touch' => 'Επικοινωνία',
 	'Lets craft together' => 'Ας φτιάξουμε κάτι μαζί',
-	"Tell us what you have in mind and we'll reply with pricing, materials, and a timeline." =>
-		'Πείτε μας τι έχετε στο μυαλό σας και θα σας απαντήσουμε με τιμή, υλικά και χρονοδιάγραμμα.',
+	"Tell us what you have in mind and we'll reply with materials and a timeline." =>
+		'Πείτε μας τι έχετε στο μυαλό σας και θα σας απαντήσουμε με υλικά και χρονοδιάγραμμα.',
 	'Email' => 'Email',
 	'Phone' => 'Τηλέφωνο',
 	'Studio' => 'Εργαστήριο',

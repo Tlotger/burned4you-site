@@ -25,7 +25,7 @@ if ( is_wp_error( $categories ) ) {
 		<div>
 			<p class="eyebrow"><?php echo esc_html( b4y_str( 'contact.eyebrow', 'Get in touch' ) ); ?></p>
 			<h1><?php echo esc_html( b4y_str( 'contact.title', 'Lets craft together' ) ); ?></h1>
-			<p><?php echo esc_html( b4y_str( 'contact.text', "Tell us what you have in mind and we'll reply with pricing, materials, and a timeline." ) ); ?></p>
+			<p><?php echo esc_html( b4y_str( 'contact.text', "Tell us what you have in mind and we'll reply with materials and a timeline." ) ); ?></p>
 
 			<dl class="contact-details">
 				<div>

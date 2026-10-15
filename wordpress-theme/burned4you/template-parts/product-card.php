@@ -37,7 +37,7 @@ $ask_url = add_query_arg(
 		<?php if ( $personalizable ) : ?>
 			<p class="personalizable"><?php echo esc_html( b4y_str( 'catalog.personalizable', 'Can be personalized' ) ); ?></p>
 		<?php endif; ?>
-		<p class="card__note"><?php echo esc_html( b4y_str( 'contact.text', "Tell us what you have in mind and we'll reply with pricing, materials, and a timeline." ) ); ?></p>
+		<p class="card__note"><?php echo esc_html( b4y_str( 'contact.text', "Tell us what you have in mind and we'll reply with materials and a timeline." ) ); ?></p>
 		<div class="card__footer">
 			<a href="<?php echo esc_url( $ask_url ); ?>" class="card__ask"><?php echo esc_html( b4y_str( 'catalog.ask', 'Ask About This' ) ); ?></a>
 		</div>
