@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/bu686769/public_html/wp-content/themes/burned4you/
+    - /bin/cp -R wordpress-theme/burned4you/. $DEPLOYPATH
